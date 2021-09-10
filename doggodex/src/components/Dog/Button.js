@@ -1,8 +1,8 @@
 
 // Will fetch new image
-function Button() {
+function Button({ getImage }) {
   return (
-    <button>Button</button>
+    <button onClick={getImage}>New Image</button>
   )
 }
 

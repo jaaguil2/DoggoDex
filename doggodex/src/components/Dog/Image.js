@@ -1,8 +1,8 @@
 
 // Displays Image
-function Image({ image }) {
+function Image({ image, dogBreed, dogSubBreed }) {
   return (
-    <img src={ image } alt='' />
+    <img src={ image } alt={dogBreed+'-'+dogSubBreed} />
   )
 }
 

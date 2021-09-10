@@ -8,13 +8,15 @@ import Button from "./Button"
 function Dog({ data }) {
 
   // States
-  const [dogBreed, setDogBreed] = useState('hound')
-  const [dogSubBreed, setDogSubBreed] = useState('afghan')
+  const [image, setImage] = useState('')
+
+  // TODO FIX THIS
+  let dogBreed = 'hound'
+  let dogSubBreed = 'afghan'
 
 
-  // Fetch Request for image
-  
-  useEffect(() => {
+  // Fetch Request for image  
+    const getImage = () => {
     const axios = require('axios').default
 
     const url = {
@@ -24,21 +26,21 @@ function Dog({ data }) {
 
     axios.get(`${url.api}${dogBreed}/${dogSubBreed}${url.endpoint}`)
       .then(res => {
-        console.log(res)
+        setImage(res.data.message)
       })
       .catch(error => console.log(error))
+  }
 
 
-  }, [])
+  useEffect(getImage, [setImage, dogBreed, dogSubBreed])
 
-
-
+  // useEffect
 
   return (
     <div>
-      <h2>{data.name}</h2>
-      <Image image={ data.image } />
-      <Button />
+      <h2>{`${dogSubBreed.toUpperCase()} ${dogBreed.toUpperCase()}`}</h2>
+      <Image image={image} dogBreed={dogBreed} dogSubBreed={dogSubBreed} />
+      <Button getImage={getImage} />
     </div>
   )
 }
