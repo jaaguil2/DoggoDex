@@ -1,8 +1,15 @@
 
+// Imported Components
+import Image from "./Image"
+import Button from "./Button"
 
 function Dog() {
   return (
-    <p>Dog</p>
+    <div>
+      <h1>Dog</h1>
+      <Image />
+      <Button />
+    </div>
   )
 }
 
