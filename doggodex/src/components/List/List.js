@@ -2,14 +2,14 @@
 
 // Imported Components
 import Search from "./Search";
-import ListtItems from "./ListItems";
+import ListItems from "./ListItems";
 
 // Main component for list branch
 function List({ dataArr }) {
   return (
     <div>
       <Search />
-      <ListtItems dataArr={dataArr} />
+      <ListItems dataArr={dataArr} />
     </div>
   );
 };

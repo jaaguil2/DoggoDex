@@ -3,6 +3,7 @@
 // Imported Components
 import Dog from "./components/Dog/Dog";
 import List from "./components/List/List";
+import Helper from "./components/Helper";
 
 function App() {
   
@@ -22,13 +23,12 @@ function App() {
     }
   ]
 
-  let data = dataArr[0]
-
   return (
     <main >
       <h1>DoggoDex</h1>
-      <List dataArr={dataArr} />
-      <Dog data={ data } />
+      <List dataArr={ dataArr } />
+      <Dog data={ dataArr[0] } />
+      <Helper />
     </main>
   );
 };

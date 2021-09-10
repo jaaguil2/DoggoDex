@@ -3,7 +3,9 @@
 // User input to search for specific dog
 function Search() {
   return (
-    <p>Search</p>
+    <div>
+      <input type="text" />
+    </div>
   );
 };
 
