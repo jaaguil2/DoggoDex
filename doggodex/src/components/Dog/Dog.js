@@ -11,36 +11,45 @@ function Dog({ data }) {
   const [image, setImage] = useState('')
 
   // TODO FIX THIS
-  let dogBreed = 'hound'
-  let dogSubBreed = 'afghan'
+  let dogBreed = ''
+  let dogSubBreed = ''
+
+  // prevents error from no breed selected
+  let start = (dogBreed.length === 0)
 
 
   // Fetch Request for image  
-    const getImage = () => {
-    const axios = require('axios').default
+  const getImage = () => {
+  const axios = require('axios').default
 
-    const url = {
-      api: "https://dog.ceo/api/breed/",
-      endpoint: "/images/random"
-    }
+  let urlSend
 
-    axios.get(`${url.api}${dogBreed}/${dogSubBreed}${url.endpoint}`)
-      .then(res => {
-        setImage(res.data.message)
-      })
-      .catch(error => console.log(error))
+  const url = {
+    api: "https://dog.ceo/api/breed/",
+    endpoint: "/images/random"
   }
 
+  if (dogBreed.length === 0) {
+    urlSend = 'https://dog.ceo/api/breeds/image/random'
+  } else {
+    urlSend = `${url.api}${dogBreed}/${dogSubBreed}${url.endpoint}`
+  }
 
-  useEffect(getImage, [setImage, dogBreed, dogSubBreed])
+    axios.get(urlSend)
+    .then(res => {
+      setImage(res.data.message)
+    })
+    .catch(error => console.log(error))
+  }
 
   // useEffect
+  useEffect(getImage, [setImage, dogBreed, dogSubBreed]) 
 
   return (
     <div>
-      <h2>{`${dogSubBreed.toUpperCase()} ${dogBreed.toUpperCase()}`}</h2>
+      <h2>{start ? "Select A Dog" : `${dogSubBreed.toUpperCase()} ${dogBreed.toUpperCase()}`}</h2>
       <Image image={image} dogBreed={dogBreed} dogSubBreed={dogSubBreed} />
-      <Button getImage={getImage} />
+      {start ? null : <Button getImage={getImage} />}
     </div>
   )
 }
