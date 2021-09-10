@@ -1,4 +1,7 @@
 
+// Imported Components
+import Dog from "./components/Dog/Dog";
+import List from "./components/List/List";
 
 function App() {
   
@@ -6,11 +9,12 @@ function App() {
   const data = {
     name: "dogdogdog",
     image: "https://i.imgur.com/Psvkw19m.jpg?1",
-  }
+  };
 
   return (
     <main >
-      app
+      <List />
+      <Dog />
     </main>
   );
 };
