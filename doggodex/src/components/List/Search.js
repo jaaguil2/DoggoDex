@@ -4,7 +4,7 @@
 function Search() {
   return (
     <p>Search</p>
-  )
-}
+  );
+};
 
-export default Search
+export default Search;

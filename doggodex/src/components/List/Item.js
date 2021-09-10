@@ -1,9 +1,10 @@
 
 
 // Component to build each item
-function Item() {
+function Item({name}) {
+  console.log(name)
   return (
-    <p>Item</p>
+    <p>{name}</p>
   )
 }
 

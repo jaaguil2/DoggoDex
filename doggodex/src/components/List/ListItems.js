@@ -1,9 +1,13 @@
-
+import Item from "./Item"
 
 // Component to list each element
-function ListtItems() {
+function ListtItems({ dataArr}) {
   return (
-    <p>ListtItems</p>
+    <div>
+      {dataArr.map((element) => (
+        <Item name={element.name} />
+      ))}
+    </div>
   )
 }
 

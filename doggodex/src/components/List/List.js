@@ -1,10 +1,17 @@
 
 
-// Main component for list branch
-function List() {
-  return (
-    <h1>List</h1>
-  )
-}
+// Imported Components
+import Search from "./Search";
+import ListtItems from "./ListItems";
 
-export default List
+// Main component for list branch
+function List({ dataArr }) {
+  return (
+    <div>
+      <Search />
+      <ListtItems dataArr={dataArr} />
+    </div>
+  );
+};
+
+export default List;
