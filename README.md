@@ -14,6 +14,8 @@ DoggoDex is a fun way for dog lovers to track what dogs they have seen and not s
   * React
   * Axios
 * Libraries
+  * React - useEffect
+  * React - useState
 
 ## Getting Started
 
