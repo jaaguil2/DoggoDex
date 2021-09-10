@@ -1,13 +1,15 @@
 
+
 // Imported Components
 import Image from "./Image"
 import Button from "./Button"
 
-function Dog() {
+// Main component for selected dog
+function Dog({ data }) {
   return (
     <div>
-      <h1>Dog</h1>
-      <Image />
+      <h2>{data.name}</h2>
+      <Image image={ data.image } />
       <Button />
     </div>
   )

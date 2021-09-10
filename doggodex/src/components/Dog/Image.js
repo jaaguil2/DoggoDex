@@ -1,10 +1,8 @@
 
-
-
-
-function Image() {
+// Displays Image
+function Image({ image }) {
   return (
-    <p>Image</p>
+    <img src={ image } alt='' />
   )
 }
 

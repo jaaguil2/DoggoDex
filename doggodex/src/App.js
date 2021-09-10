@@ -1,4 +1,5 @@
 
+
 // Imported Components
 import Dog from "./components/Dog/Dog";
 import List from "./components/List/List";
@@ -13,8 +14,9 @@ function App() {
 
   return (
     <main >
+      <h1>DoggoDex</h1>
       <List />
-      <Dog />
+      <Dog data={ data } />
     </main>
   );
 };

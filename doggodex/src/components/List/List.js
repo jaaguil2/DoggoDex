@@ -2,7 +2,7 @@
 
 function List() {
   return (
-    <p>List</p>
+    <h1>List</h1>
   )
 }
 
