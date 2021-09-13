@@ -9,7 +9,6 @@ import List from "./components/List/List"
 import Helper from "./components/Helper"
 
 // Style
-
 const Body = styled.div`
   background-color: #EA5F42;
   border: 10px solid black;

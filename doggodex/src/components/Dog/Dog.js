@@ -1,10 +1,18 @@
 
 
 import {useState, useEffect} from 'react'
+import styled from 'styled-components'
 
 // Imported Components
 import Image from "./Image"
 import Button from "./Button"
+
+// Style
+const H2 = styled.h2`
+    @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+    font-family: 'VT323', monospace;
+    font-size: xx-large;
+  `
 
 // Main component for selected dog
 function Dog({ dog }) {
@@ -44,9 +52,11 @@ function Dog({ dog }) {
 
   useEffect(getImage, [setImage, dog]) 
 
+  
+
   return (
     <div>
-      <h2>{(dog.length === 0) ? "Select A Dog" : `${dog.toUpperCase()}`}</h2>
+      <H2>{(dog.length === 0) ? "Select A Dog" : `${dog.toUpperCase()}`}</H2>
       <Image image={image} dog={dog} />
       {(dog.length === 0) ? null : <Button getImage={getImage} />}
     </div>
