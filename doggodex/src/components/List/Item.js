@@ -10,7 +10,7 @@ function Item({name, setDog}) {
   return (
     <div>
       <input type='checkbox' />
-      <p onClick={clicked}>{name}</p>
+      <p onClick={clicked}>{name.toUpperCase()}</p>
     </div>
     
   );

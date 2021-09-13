@@ -27,7 +27,7 @@ function Dog({ dog }) {
       urlSend = 'https://dog.ceo/api/breeds/image/random'
     } else {
       // Breaks up dog name for url
-      let name = dog.split(' ')
+      let name = dog.toLowerCase().split(' ')
       if (name.length === 1) {
         urlSend = `${url.api}${name[0]}${url.endpoint}`
       } else {
