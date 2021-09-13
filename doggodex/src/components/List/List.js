@@ -4,12 +4,16 @@ import { useState, useEffect } from "react"
 
 // Imported Components
 import ListItems from "./ListItems"
+import Total from "./Total"
 
 // Main component for list branch
 function List({ setDog }) {
 
+  // States
   const [dogList, setDogList] = useState([])
+  const [seenDogs, setSeenDogs] = useState([])
 
+  // 
   const makeList = (dogObj) => {
     const newList = []
     for (let breed in dogObj) {
@@ -39,7 +43,8 @@ function List({ setDog }) {
 
   return (
     <div>
-      <ListItems dogList={dogList} setDog={setDog} />
+      <Total seenDogs={seenDogs} dogList={dogList} />
+      <ListItems dogList={dogList} setDog={setDog} seenDogs={seenDogs} setSeenDogs={setSeenDogs} />
     </div>
   );
 };

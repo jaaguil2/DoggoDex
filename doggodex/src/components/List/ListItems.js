@@ -7,7 +7,7 @@ import { useEffect, useState } from 'react'
 import Item from "./Item"
 
 // Component to list each element
-function ListItems({ dogList, setDog }) {    
+function ListItems({ dogList, setDog, seenDogs, setSeenDogs }) {
 
 
   // States
@@ -42,7 +42,7 @@ function ListItems({ dogList, setDog }) {
       <input type="text" value={search} onChange={handleChange} />
       <button onClick={clear}>clear</button>
       {sendList.map((element, idx) => (
-          <Item key={idx} name={element} setDog={setDog} />))}
+        <Item key={idx} name={element} setDog={setDog} seenDogs={seenDogs} setSeenDogs={setSeenDogs} />))}
     </div>
   )
 }
