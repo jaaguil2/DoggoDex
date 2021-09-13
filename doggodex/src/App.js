@@ -15,7 +15,6 @@ const Body = styled.div`
   border: 10px solid black;
 `
 
-
 const Main = styled.main`
   display: grid;
   grid-template-columns: 1fr;
@@ -36,6 +35,16 @@ const H1 = styled.h1`
   border-radius: 2rem;
 `
 
+const MainSection = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-template-rows: auto;
+  margin: 1rem;
+  padding: 1rem;
+  border: 6px solid black;
+  border-radius: 5px;
+`
+
 function App() {
 
   const [dog, setDog] = useState('')  
@@ -46,10 +55,10 @@ function App() {
         <Container>
           <H1>DoggoDex</H1>
         </Container>
-        <div>
+        <MainSection>
           <List setDog={setDog} />
           <Dog dog={ dog } />
-        </div>
+        </MainSection>
         <div>
           <Helper />
         </div>
