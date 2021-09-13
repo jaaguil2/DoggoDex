@@ -17,7 +17,8 @@ DoggoDex is a fun way for dog lovers to track what dogs they have seen and not s
 * Libraries
   * React - useEffect
   * React - useState
-
+* API
+  * [Dog API](https://dog.ceo/dog-api/)
 ## Getting Started
 
 Simply click the check box of dogs you've seen to mark them off.
