@@ -3,7 +3,6 @@
 import { useState, useEffect } from "react"
 
 // Imported Components
-import Search from "./Search"
 import ListItems from "./ListItems"
 
 // Main component for list branch
@@ -40,7 +39,6 @@ function List({ setDog }) {
 
   return (
     <div>
-      <Search />
       <ListItems dogList={dogList} setDog={setDog} />
     </div>
   );
