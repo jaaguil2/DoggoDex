@@ -7,18 +7,10 @@ import Image from "./Image"
 import Button from "./Button"
 
 // Main component for selected dog
-function Dog({ data }) {
+function Dog({ dog }) {
 
   // States
   const [image, setImage] = useState('')
-
-  // TODO FIX THIS
-  let dogBreed = ''
-  let dogSubBreed = ''
-
-  // prevents error from no breed selected
-  let start = (dogBreed.length === 0)
-
 
   // Fetch Request for image  
   const getImage = () => {
@@ -31,27 +23,32 @@ function Dog({ data }) {
       endpoint: "/images/random"
     }
 
-    if (dogBreed.length === 0) {
+    if (dog.length === 0) {
       urlSend = 'https://dog.ceo/api/breeds/image/random'
     } else {
-      urlSend = `${url.api}${dogBreed}/${dogSubBreed}${url.endpoint}`
+      let name = dog.split(' ')
+      if (name.length === 1) {
+        urlSend = `${url.api}${name[0]}${url.endpoint}`
+      } else {
+        urlSend = `${url.api}${name[1]}/${name[0]}${url.endpoint}`
+      }      
     }
 
     axios.get(urlSend)
     .then(res => {
       setImage(res.data.message)
     })
-    .catch(error => console.log(error))
+    .catch(error => console.log('Error:', error))
   }
 
   // useEffect
-  useEffect(getImage, [setImage, dogBreed, dogSubBreed]) 
+  useEffect(getImage, [setImage, dog]) 
 
   return (
     <div>
-      <h2>{start ? "Select A Dog" : `${dogSubBreed.toUpperCase()} ${dogBreed.toUpperCase()}`}</h2>
-      <Image image={image} dogBreed={dogBreed} dogSubBreed={dogSubBreed} />
-      {start ? null : <Button getImage={getImage} />}
+      <h2>{(dog.length === 0) ? "Select A Dog" : `${dog.toUpperCase()}`}</h2>
+      <Image image={image} dog={dog} />
+      {(dog.length === 0) ? null : <Button getImage={getImage} />}
     </div>
   )
 }

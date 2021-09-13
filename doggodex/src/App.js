@@ -1,3 +1,5 @@
+
+
 import { useState } from 'react'
 
 // Imported Components
@@ -7,31 +9,13 @@ import Helper from "./components/Helper";
 
 function App() {
 
-  const [dog, setDog] = useState('')
-  
-  // test data
-  const dataArr = [
-    {
-      name: "dog",
-      image: "https://i.imgur.com/Psvkw19m.jpg?1",
-    },
-    {
-      name: "dogdog",
-      image: "https://i.imgur.com/Psvkw19m.jpg?1",
-    },
-    {
-      name: "dogdogdog",
-      image: "https://i.imgur.com/Psvkw19m.jpg?1",
-    }
-  ]
-
-  
+  const [dog, setDog] = useState('')  
 
   return (
     <main >
       <h1>DoggoDex</h1>
       <List setDog={setDog} />
-      <Dog data={ dataArr[0] } />
+      <Dog dog={ dog } />
       <Helper />
     </main>
   );
