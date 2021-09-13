@@ -9,16 +9,20 @@ import Item from "./Item"
 // Component to list each element
 function ListItems({ dogList, setDog }) {    
 
+
+  // States
   const [sendList, setSendList] = useState(null)
   const [dogSearch, setDogSearch] = useState([])
   const [search, setSearch] = useState('')
 
+  // When text typed in search field, update list
   const handleChange = (e) => {
     setSearch(e.target.value)
     const newList = dogList.filter(text => text.includes(e.target.value))
     setDogSearch(newList)
   }
 
+  // Determines which list gets sent
   useEffect(() => {
     if (search.length === 0) {
       setSendList(dogList)
@@ -27,6 +31,7 @@ function ListItems({ dogList, setDog }) {
     }
   }, [search, dogList, dogSearch])
 
+  // When clear button pressed, clears search
   function clear() {
     setSearch('')
   }
