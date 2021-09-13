@@ -26,6 +26,7 @@ function Dog({ dog }) {
     if (dog.length === 0) {
       urlSend = 'https://dog.ceo/api/breeds/image/random'
     } else {
+      // Breaks up dog name for url
       let name = dog.split(' ')
       if (name.length === 1) {
         urlSend = `${url.api}${name[0]}${url.endpoint}`
@@ -41,7 +42,6 @@ function Dog({ dog }) {
     .catch(error => console.log('Error:', error))
   }
 
-  // useEffect
   useEffect(getImage, [setImage, dog]) 
 
   return (

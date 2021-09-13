@@ -7,9 +7,12 @@ function Item({name, setDog}) {
     setDog(e.currentTarget.innerText)
   }
 
-
   return (
-    <p onClick={clicked}>{name}</p>
+    <div>
+      <input type='checkbox' />
+      <p onClick={clicked}>{name}</p>
+    </div>
+    
   );
 };
 
