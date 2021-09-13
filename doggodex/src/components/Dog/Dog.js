@@ -11,8 +11,7 @@ import Button from "./Button"
 const H2 = styled.h2`
     @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
     font-family: 'VT323', monospace;
-    font-size: xx-large;
-  `
+`
 
 // Main component for selected dog
 function Dog({ dog }) {
