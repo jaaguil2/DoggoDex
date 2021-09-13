@@ -1,9 +1,15 @@
 
 
 // Component to build each item
-function Item({name}) {
+function Item({name, setDog}) {
+
+  const clicked = (e) => {
+    setDog(e.currentTarget.innerText)
+  }
+
+
   return (
-    <p>{name}</p>
+    <p onClick={clicked}>{name}</p>
   );
 };
 

@@ -1,3 +1,5 @@
+
+
 import {useState, useEffect} from 'react'
 
 // Imported Components
@@ -20,20 +22,20 @@ function Dog({ data }) {
 
   // Fetch Request for image  
   const getImage = () => {
-  const axios = require('axios').default
+    const axios = require('axios').default
 
-  let urlSend
+    let urlSend
 
-  const url = {
-    api: "https://dog.ceo/api/breed/",
-    endpoint: "/images/random"
-  }
+    const url = {
+      api: "https://dog.ceo/api/breed/",
+      endpoint: "/images/random"
+    }
 
-  if (dogBreed.length === 0) {
-    urlSend = 'https://dog.ceo/api/breeds/image/random'
-  } else {
-    urlSend = `${url.api}${dogBreed}/${dogSubBreed}${url.endpoint}`
-  }
+    if (dogBreed.length === 0) {
+      urlSend = 'https://dog.ceo/api/breeds/image/random'
+    } else {
+      urlSend = `${url.api}${dogBreed}/${dogSubBreed}${url.endpoint}`
+    }
 
     axios.get(urlSend)
     .then(res => {

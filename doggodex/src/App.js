@@ -1,4 +1,4 @@
-
+import { useState } from 'react'
 
 // Imported Components
 import Dog from "./components/Dog/Dog";
@@ -6,6 +6,8 @@ import List from "./components/List/List";
 import Helper from "./components/Helper";
 
 function App() {
+
+  const [dog, setDog] = useState('')
   
   // test data
   const dataArr = [
@@ -23,10 +25,12 @@ function App() {
     }
   ]
 
+  
+
   return (
     <main >
       <h1>DoggoDex</h1>
-      <List dataArr={ dataArr } />
+      <List setDog={setDog} />
       <Dog data={ dataArr[0] } />
       <Helper />
     </main>
