@@ -1,4 +1,5 @@
 
+
 // Will fetch new image
 function Button({ getImage }) {
   return (

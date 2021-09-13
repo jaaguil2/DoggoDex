@@ -13,7 +13,7 @@ function List({ setDog }) {
   const [dogList, setDogList] = useState([])
   const [seenDogs, setSeenDogs] = useState([])
 
-  // 
+  // Converts fetch obj to array
   const makeList = (dogObj) => {
     const newList = []
     for (let breed in dogObj) {
@@ -28,6 +28,7 @@ function List({ setDog }) {
     return newList
   }  
 
+  // Fetch request
   useEffect(() => {
     const axios = require('axios').default
     let urlSend = 'https://dog.ceo/api/breeds/list/all'
@@ -42,11 +43,11 @@ function List({ setDog }) {
   }, [])
 
   return (
-    <div>
-      <Total seenDogs={seenDogs} dogList={dogList} />
+    <div>      
       <ListItems dogList={dogList} setDog={setDog} seenDogs={seenDogs} setSeenDogs={setSeenDogs} />
+      <Total seenDogs={seenDogs} dogList={dogList} />
     </div>
-  );
-};
+  )
+}
 
-export default List;
+export default List
