@@ -29,7 +29,7 @@ const ListDiv = styled.div`
   padding: 1rem;
   height: 500px;
   overflow: scroll;
-  border: solid black;
+  border: ridge lightgray 6px;
   border-radius: 3px;
   background-color: black;
 `
