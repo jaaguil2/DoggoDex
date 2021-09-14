@@ -25,16 +25,21 @@ function Dog({ dog }) {
 
   // States
   const [image, setImage] = useState('')
+  const [index, setIndex] = useState(0)
 
   // Fetch Request for image  
   const getImage = () => {
+
+    // Reset index
+    setIndex(0)
+    
     const axios = require('axios').default
 
     let urlSend
 
     const url = {
       api: "https://dog.ceo/api/breed/",
-      endpoint: "/images/random"
+      endpoint: "/images",
     }
 
     if (dog.length === 0) {
@@ -61,8 +66,8 @@ function Dog({ dog }) {
   return (
     <Container>
       <H2>{(dog.length === 0) ? "Guess This Dog?" : `${dog.toUpperCase()}`}</H2>
-      <Image image={image} dog={dog} />
-      {(dog.length === 0) ? null : <Button getImage={getImage} />}
+      <Image image={image} dog={dog} index={index} />
+      {(dog.length === 0) ? null : <Button setIndex={setIndex} index={index} image={image} />}
     </Container>
   )
 }

@@ -1,5 +1,6 @@
 
 
+import { useState, useEffect } from "react"
 import styled from "styled-components"
 
 // Style
@@ -18,9 +19,20 @@ const DogImage = styled.img`
 `
 
 // Displays Image
-function Image({ image, dog }) {
+function Image({ image, dog, index }) {
+
+  const [sendingImage, setSendingImage] = useState('#')  
+
+  useEffect(() => {
+    if (typeof image === 'string') {
+      setSendingImage(image)
+    } else {
+      setSendingImage(image[index])
+    }
+  }, [image, index])
+
   return (
-    <DogImage src={image} alt={dog} />
+    <DogImage src={sendingImage} alt={dog} />
   )
 }
 
