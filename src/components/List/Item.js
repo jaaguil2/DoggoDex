@@ -1,5 +1,6 @@
 
 
+import { useEffect } from "react"
 import styled from "styled-components"
 
 // Style
@@ -33,7 +34,7 @@ const Name = styled(Input)`
 `
 
 // Component to build each item
-function Item({name, setDog, seenDogs, setSeenDogs}) { 
+function Item({name, setDog, seenDogs, setSeenDogs, line}) { 
   
   const clicked = (e) => {
     setDog(e.currentTarget.innerText)
@@ -43,20 +44,21 @@ function Item({name, setDog, seenDogs, setSeenDogs}) {
     let target = e.target.id
     let newArr = seenDogs.slice()
     if (newArr.includes(target)) {
-      e.currentTarget.style.textDecoration = 'none'
       newArr = newArr.filter(dog => dog !== target)
     } else {
-      e.currentTarget.style.textDecoration = 'line-through'
       newArr.push(target)      
-    }
-    
+    }    
     setSeenDogs(newArr)
+  }
+
+  const style = {
+    textDecoration: line ? "line-through" : "none"
   }
 
   return (
     <Container>
       <Name onClick={clicked} >{name.toUpperCase()}</Name>
-      <Input id={name} onClick={handleChecked}>SEEN</Input>
+      <Input id={name} onClick={handleChecked} style={style} >SEEN</Input>
     </Container>    
   );
 };

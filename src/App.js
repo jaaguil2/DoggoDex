@@ -67,8 +67,7 @@ function App() {
             <Helper />
           </div>
         </Main>
-      } />
-      
+      } />      
     </Body>
   )
 }

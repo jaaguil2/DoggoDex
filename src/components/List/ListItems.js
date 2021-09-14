@@ -72,7 +72,7 @@ function ListItems({ dogList, setDog, seenDogs, setSeenDogs }) {
       </Search>
       <ListDiv>
         {sendList.map((element, idx) => (
-          <Item key={idx} name={element} setDog={setDog} seenDogs={seenDogs} setSeenDogs={setSeenDogs} />))}
+          <Item key={idx} name={element} setDog={setDog} seenDogs={seenDogs} setSeenDogs={setSeenDogs} line={seenDogs.includes(element)} />))}
       </ListDiv>
     </div>
   )
