@@ -43,12 +43,13 @@ function Item({name, setDog, seenDogs, setSeenDogs}) {
     let target = e.target.id
     let newArr = seenDogs.slice()
     if (newArr.includes(target)) {
+      e.currentTarget.style.textDecoration = 'none'
       newArr = newArr.filter(dog => dog !== target)
     } else {
-      newArr.push(target)
-      
+      e.currentTarget.style.textDecoration = 'line-through'
+      newArr.push(target)      
     }
-    e.currentTarget.style.color = 'white'
+    
     setSeenDogs(newArr)
   }
 

@@ -1,6 +1,7 @@
 
 
 import { useState } from 'react'
+import { Route } from 'react-router-dom'
 import styled from 'styled-components'
 
 // Imported Components
@@ -53,18 +54,21 @@ function App() {
 
   return (
     <Body>
-      <Main >
-        <Container>
-          <H1>DoggoDex</H1>
-        </Container>
-        <MainSection>
-          <List setDog={setDog} />
-          <Dog dog={ dog } />
-        </MainSection>
-        <div>
-          <Helper />
-        </div>
-      </Main>
+      <Route path='/' render={() =>
+        <Main >
+          <Container>
+            <H1>DoggoDex</H1>
+          </Container>
+          <MainSection>
+            <List setDog={setDog} />
+            <Dog dog={dog} />
+          </MainSection>
+          <div>
+            <Helper />
+          </div>
+        </Main>
+      } />
+      
     </Body>
   )
 }
