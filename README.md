@@ -12,11 +12,13 @@ DoggoDex is a fun way for dog lovers to track what dogs they have seen and not s
   * HTML
 * Framework
   * React
+  * React-Router-Dom
   * Axios
   * Styled Components
 * Libraries
-  * React - useEffect
-  * React - useState
+  * React: useEffect
+  * React: useState
+  * React-Router: route
 * API
   * [Dog API](https://dog.ceo/dog-api/)
 ## Getting Started
