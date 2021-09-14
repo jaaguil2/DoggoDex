@@ -9,25 +9,32 @@ const Container = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
-  background-color: black;
-  color: white;
+  justify-content: space-between;
   margin-bottom: 5px;
   border-radius: 10px;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  border: darkgrey solid 1px;
+  background-color: darkgrey;
 `
 
 const Input = styled.p`
   margin: 5px;
-  border: solid black 2px;
   padding-left: 4px;
   padding-right: 4px;
-  background-color: darkgrey;
-  border-radius: 3px;
+  background-color: #EAB342;
+  box-shadow: 3px 3px #C89A42;
+  border-radius: 3px;  
+`
+
+const Name = styled(Input)`
+  background-color: #42EA5F;
+  box-shadow: 3px 3px #45CE5D;
 `
 
 // Component to build each item
 function Item({name, setDog, seenDogs, setSeenDogs}) { 
   
-
   const clicked = (e) => {
     setDog(e.currentTarget.innerText)
   }
@@ -39,16 +46,17 @@ function Item({name, setDog, seenDogs, setSeenDogs}) {
       newArr = newArr.filter(dog => dog !== target)
     } else {
       newArr.push(target)
+      
     }
+    e.currentTarget.style.color = 'white'
     setSeenDogs(newArr)
   }
 
   return (
     <Container>
-      <Input id={name} type='checkbox' onClick={handleChecked}>SEEN</Input>
-      <p onClick={clicked}> {name.toUpperCase()}</p>
-    </Container>
-    
+      <Name onClick={clicked} >{name.toUpperCase()}</Name>
+      <Input id={name} onClick={handleChecked}>SEEN</Input>
+    </Container>    
   );
 };
 

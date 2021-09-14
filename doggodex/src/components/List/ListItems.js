@@ -31,7 +31,7 @@ const ListDiv = styled.div`
   overflow: scroll;
   border: solid black;
   border-radius: 3px;
-  background-color: lightgrey;
+  background-color: black;
 `
 
 // Component to list each element
