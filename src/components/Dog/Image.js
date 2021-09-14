@@ -10,7 +10,7 @@ import styled from "styled-components"
 // https://developer.mozilla.org/en-US/docs/Web/CSS/object-fit
 // I set width and height and let css w/object-fit do the rest (tries to keep aspect ratio)
 const DogImage = styled.img`
-  width: 700px;
+  width: 80%;
   height: 500px;
   object-fit: contain;
   border: 6px groove lightgray;
