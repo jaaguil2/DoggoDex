@@ -33,6 +33,7 @@ const ListDiv = styled.div`
   border: ridge lightgray 6px;
   border-radius: 3px;
   background-color: black;
+  color: black;
 `
 
 // Component to list each element
