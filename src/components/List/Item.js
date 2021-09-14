@@ -1,6 +1,5 @@
 
 
-import { useEffect } from "react"
 import styled from "styled-components"
 
 // Style
@@ -26,11 +25,17 @@ const Input = styled.p`
   background-color: #EAB342;
   box-shadow: 3px 3px #C89A42;
   border-radius: 3px;  
+  &:hover{
+    color: white;
+  }
 `
 
 const Name = styled(Input)`
   background-color: #42EA5F;
   box-shadow: 3px 3px #45CE5D;
+  &:hover{
+    color: white;
+  }
 `
 
 // Component to build each item

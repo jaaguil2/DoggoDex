@@ -1,10 +1,21 @@
 
 
 import { useState, useEffect } from "react"
+import styled from "styled-components"
 
 // Imported Components
 import ListItems from "./ListItems"
 import Total from "./Total"
+
+// Style
+const TotalStyled = styled.div`
+  @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+  font-family: 'VT323', monospace;
+  display: flex;
+  justify-content: center;
+  border: black solid 3px;
+  border-radius: 3px;
+`
 
 // Main component for list branch
 function List({ setDog }) {
@@ -45,7 +56,9 @@ function List({ setDog }) {
   return (
     <div>      
       <ListItems dogList={dogList} setDog={setDog} seenDogs={seenDogs} setSeenDogs={setSeenDogs} />
-      <Total seenDogs={seenDogs} dogList={dogList} />
+      <TotalStyled>
+        <Total seenDogs={seenDogs} dogList={dogList} />
+      </TotalStyled>
     </div>
   )
 }

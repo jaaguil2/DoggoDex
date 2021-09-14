@@ -2,7 +2,7 @@
 
 function Total({ seenDogs, dogList}) {
   return (
-    <h2>{`Total: ${seenDogs.length}/${dogList.length}`}</h2>
+    <h3>{`TOTAL SEEN: ${seenDogs.length}/${dogList.length}`}</h3>
   )
 }
 
