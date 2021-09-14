@@ -12,6 +12,13 @@ const H2 = styled.h2`
     @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
     font-family: 'VT323', monospace;
 `
+const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: black solid;
+  margin: .75rem;
+`
 
 // Main component for selected dog
 function Dog({ dog }) {
@@ -51,14 +58,12 @@ function Dog({ dog }) {
 
   useEffect(getImage, [setImage, dog]) 
 
-  
-
   return (
-    <div>
-      <H2>{(dog.length === 0) ? "Select A Dog" : `${dog.toUpperCase()}`}</H2>
+    <Container>
+      <H2>{(dog.length === 0) ? "Guess This Dog?" : `${dog.toUpperCase()}`}</H2>
       <Image image={image} dog={dog} />
       {(dog.length === 0) ? null : <Button getImage={getImage} />}
-    </div>
+    </Container>
   )
 }
 

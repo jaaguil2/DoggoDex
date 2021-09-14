@@ -14,6 +14,7 @@ const Search = styled.div`
   border-radius: 3px;
   padding: .5rem;
 `
+
 const Button = styled.button`
   color: white;
   background-color: grey;

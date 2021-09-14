@@ -9,11 +9,12 @@ import styled from "styled-components"
 // https://developer.mozilla.org/en-US/docs/Web/CSS/object-fit
 // I set width and height and let css w/object-fit do the rest (tries to keep aspect ratio)
 const DogImage = styled.img`
-  width: 500px;
+  width: 700px;
   height: 500px;
-  object-fit: cover;
-  border: 6px solid black;
+  object-fit: contain;
+  border: 6px groove lightgray;
   border-radius: 3px;
+  background-color: black;
 `
 
 // Displays Image
