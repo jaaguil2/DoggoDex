@@ -6,6 +6,10 @@ DoggoDex is a fun way for dog lovers to track what dogs they have seen and not s
 
 Link to [DoggoDex](https://intense-meadow-15815.herokuapp.com/).
 
+## Screenshot
+
+![image](https://user-images.githubusercontent.com/62955391/138574803-f5a8d85e-3e38-4e5e-84dd-f0b68e590996.png)
+
 ## Technologies Used
 
 * Language
